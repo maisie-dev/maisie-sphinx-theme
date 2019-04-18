@@ -1,0 +1,4 @@
+*.pyc
+dist
+maisie_sphinx_theme.egg-info
+demo/_build
