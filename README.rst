@@ -2,7 +2,7 @@
 Maisie Sphinx Theme
 ===================
 
-Sphinx theme used by Maisie: https://docs.maisie.dev
+Sphinx theme used by Maisie: https://docs.maisie.dev  
 Based on the Guzzle theme: http://guzzlephp.org
 
 Installation
@@ -10,7 +10,7 @@ Installation
 
 Install via pip::
 
-    $ pip install maisie-sphinx-theme
+    $ pip install Maisie-Sphinx-Theme
 
 or if you have the code checked out locally::
 
