@@ -21,7 +21,7 @@ steps:
 
 - script: |
     pip install pytest pytest-azurepipelines
-    pytest
+    # pytest
   displayName: 'Test package'
 
 - script: |
@@ -30,6 +30,10 @@ steps:
     twine check dist/*
   displayName: 'Build package'
 
+- task: TwineAuthenticate@0
+  inputs:
+    externalFeeds: 'pypi_testing_unversionme'
+
 - script: |
-    twine upload --repository-url https://test.pypi.org/legacy/ dist/*
+    twine upload -r {feedName/EndpointName} dist/*
   displayName: 'Publish package'
