@@ -35,5 +35,5 @@ steps:
     externalFeeds: 'pypi_testing_unversionme'
 
 - script: |
-    twine upload -r {feedName/EndpointName} dist/*
+    twine upload -r pypi_testing_unversionme dist/*
   displayName: 'Publish package'
