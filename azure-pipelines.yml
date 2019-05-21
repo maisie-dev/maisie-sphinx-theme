@@ -32,8 +32,8 @@ steps:
 
 - task: TwineAuthenticate@0
   inputs:
-    externalFeeds: 'pypi_testing_unversionme'
+    externalFeeds: 'PyPI-Testing-UnversionMe'
 
 - script: |
-    twine upload -r pypi_testing_unversionme dist/*
+    twine upload -r PyPI-Testing-UnversionMe --config-file $(PYPIRC_PATH) dist/*
   displayName: 'Publish package'
