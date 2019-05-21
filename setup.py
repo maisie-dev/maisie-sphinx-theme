@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name="Maisie-Sphinx-Theme",
-    version="0.1.0",
+    version="0.1.1",
     description="Sphinx theme used by Maisie.",
     long_description=open("README.rst").read(),
     author="Marek Kochanowski",
