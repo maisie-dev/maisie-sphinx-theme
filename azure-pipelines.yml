@@ -1,0 +1,35 @@
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+strategy:
+  matrix:
+    Python37:
+      python.version: '3.7'
+
+steps:
+- task: UsePythonVersion@0
+  inputs:
+    versionSpec: '$(python.version)'
+  displayName: 'Use Python $(python.version)'
+
+- script: |
+    python -m pip install --upgrade pip
+    pip install -r requirements.txt
+  displayName: 'Install dependencies'
+
+- script: |
+    pip install pytest pytest-azurepipelines
+    pytest
+  displayName: 'Test package'
+
+- script: |
+    pip install twine
+    python setup.py sdist bdist_wheel
+    twine check dist/*
+  displayName: 'Build package'
+
+- script: |
+    twine upload --repository-url https://test.pypi.org/legacy/ dist/*
+  displayName: 'Publish package'
