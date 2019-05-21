@@ -34,6 +34,5 @@ steps:
   inputs:
     externalFeeds: 'PyPI-Testing-UnversionMe'
 
-- script: |
-    twine upload -r PyPI-Testing-UnversionMe --config-file $(PYPIRC_PATH) dist/*
-  displayName: 'Publish package'
+- script: 'twine upload -r PyPI-Testing-UnversionMe --config-file $(PYPIRC_PATH) dist/*'
+  displayName: 'Publish to PyPI'
