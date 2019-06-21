@@ -1,8 +1,10 @@
 from setuptools import setup
 
+__version__ = "0.1.2"
+
 setup(
     name="Maisie-Sphinx-Theme",
-    version="0.1.1",
+    version=__version__,
     description="Sphinx theme used by Maisie.",
     long_description=open("README.rst").read(),
     author="Marek Kochanowski",
